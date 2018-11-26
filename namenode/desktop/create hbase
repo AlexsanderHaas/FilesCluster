@@ -1,0 +1,3 @@
+create hbase
+
+create 'BRO_LOG', 'key', 'conn', 'dns', 'http'

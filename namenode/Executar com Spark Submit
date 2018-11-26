@@ -1,0 +1,88 @@
+/opt/spark/bin/spark-submit --class "Kafka_Hbase" --master local[2] SaveHbase.jar
+
+\\ è preciso especificar o PACOTE pois no código tem o pck main e é necessário especificar todos os jars
+/opt/spark/bin/spark-submit \
+
+
+////tive que alterar a memoria do YARN de 510 parrrrrrra 1024
+
+SPaRK: version 2.3.1.3.0.0.0-1634
+
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.Kafka_Hbase" \
+--master yarn \
+--deploy-mode cluster \
+--jars kafka_2.11-0.10.0.1.jar,spark-streaming_2.11-2.0.1.jar,kafka-clients-1.0.0.jar,spark-streaming-kafka-0-10_2.11-2.2.0.jar \
+--driver-memory 100M \
+--executor-memory 50M \
+nomaster.jar
+Untitled.jar
+
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.Kafka_Hbase" \
+--master yarn \
+--deploy-mode cluster \
+--jars kafka_2.11-0.10.0.1.jar,spark-streaming_2.11-2.0.1.jar,kafka-clients-1.0.0.jar,spark-streaming-kafka-0-10_2.11-2.2.0.jar \
+nomaster.jar
+
+//FUNCIONOU NAODDDDDDEU ERROS
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.Kafka_Hbase" \
+--master yarn \
+--deploy-mode cluster \
+--jars kafka_2.11-0.10.0.1.jar,spark-streaming_2.11-2.3.1.jar,kafka-clients-1.0.0.jar,spark-streaming-kafka-0-10_2.11-2.3.1.jar \
+nomaster.jar
+
+//Executou com sucesso e MAVEN pact 21-10-18
+sudo -u spark /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.Kafka_Hbase" \
+--master yarn \
+--deploy-mode cluster \
+--jars mvn.jar \
+inserthb.jar
+nomaster.jar
+
+//para executar com o HbaseTable é necessario exportar todos os JARS
+
+
+SELECTTTTTTTTTTT
+
+//Executou com sucesso e MAVEN pact 21-10-18
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.main_start" \
+--master yarn \
+--deploy-mode cluster \
+--jars mvn.jar,hbase-client-2.0.0.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar \
+select.jar
+
+
+--jars mvn.jar, hbase-client-2.0.0.jar \
+select.jar
+
+--jars local:/opt/spark_select \
+
+--driver-memory 600mb \
+--executor-memory 400mb \
+
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=localhost:2181 --add --allow-principal User:user --topic dns
+
+Erro:
+Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/spark/streaming/kafka010/LocationStrategies
+
+package
+package shade:shade
+
+/usr/hdp/phoenix-client/phoenix-client.jar
+
+KeeperErrorCode = NoNode for /hbase/hbaseid
+
+
+ERRo;
+TENTAR SETAR A HORA CORRETA NAS MAQUINAS FISICAS
+Could not initialize class org.apache.hadoop.hbase.protobuf.ProtobufUtil$ClassLoaderHolder  -EsSE ERRO OCORRE NA LINHA 140
+
+Erro 29/10
+Caused by: java.lang.ClassNotFoundException: org.apache.phoenix.spark.DefaultSource -- ESSE ERRO OCORRE NA LINHA 73

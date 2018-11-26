@@ -1,0 +1,8 @@
+
+/usr/hdp/current/kafka-broker
+
+bin/kafka-topics.sh --list --zookeeper namenode.ambari.hadoop:6667
+
+bin/kafka-console-consumer.sh --bootstrap-server namenode.ambari.hadoop:6667 --topic BroLog --from-beginning
+
+bin/kafka-console-producer.sh --broker-list namenode.ambari.hadoop:6667 --topic BroLog

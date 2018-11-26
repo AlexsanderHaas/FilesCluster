@@ -1,0 +1,41 @@
+//Executou com sucesso e MAVEN pact 21-10-18
+////FuNcIONOU EXECUTOU SEM ERRO 02-11-18 VALIDAR DADOS SALVOS AGORA
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.main_start" \
+--master yarn \
+--deploy-mode cluster \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-5.0.0-HBase-2.0-server.jar,spark-sql_2.11-2.3.1.jar \
+select2.jar
+
+mvn.jar \
+,hbase-annotations-2.0.0.jar,hbase-common-2.0.0.jar,hbase-protocol-shaded-2.0.0.jar \
+database.ambari.hadoop
+
+,hbase-client-2.0.0.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-5.0.0-HBase-2.0-server.jar \
+
+--conf "spark.driver.extraClassPath=/usr/hdp/3.0.0.0-1634/hbase/lib/hbase-common.jar:/usr/hdp/3.0.0.0-1634/hbase/lib/hbase-client.jar:/usr/hdp/3.0.0.0-1634/hbase/lib/hbase-protocol.jar:/usr/hdp/3.0.0.0-1634/hbase/lib/hbase-server.jar:/usr/hdp/3.0.0.0-1634/phoenix/phoenix-client.jar:/usr/hdp/3.0.0.0-1634/phoenix/lib/phoenix-5.0.0.3.0.0.0-1634-spark.jar" \
+
+"spark.driver.extraClassPath=/usr/hdp/3.0.0.0-1634/phoenix:/usr/hdp/3.0.0.0-1634/phoenix/lib" \
+--jars mvn.jar, hbase-client-2.0.0.jar \
+select.jar
+
+--jars local:/opt/spark_select \
+
+--driver-memory 600mb \
+--executor-memory 400mb \
+
+DRIVER: /usr/hdp/3.0.0.0-1634/phoenix:/usr/hdp/3.0.0.0-1634/phoenix/lib
+EXECUTOR: :/usr/hdp/3.0.0.0-1634/phoenix:/usr/hdp/3.0.0.0-1634/phoenix/lib
+
+copiei para o hbase/lib o phoenix-cleint -- removido em 07-11
+renomeado o hbase do mvn
+criei o select2 com uma nova tabela
+07-11=Funcionou o select2 inseriu os dados na tabela nova criada
+
+alterei o host dessa
+
+07-11
+copiei para o hbase/lib o phoenix-cleint -- removido em 07-11 -> funciionou dps que removi acho
+Desativado o IPV6 da database
+
+FUNCIONOU iniciou o HBASE

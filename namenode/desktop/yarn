@@ -1,0 +1,14 @@
+
+sempre tem que matar as outra execuções pois tem pouca memória
+
+yarn
+
+yarn application -list
+
+yarn application -kill
+
+
+CTRL+D sai do SSH
+
+scp -r spark_select/ root@datanode1.ambari.hadoop:/opt
+
