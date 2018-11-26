@@ -1,0 +1,12 @@
+/Área de Trabalho
+/usr/hdp/current/phoenix-client/bin/./psql.py tes.sql qq.sql
+
+/usr/hdp/current/phoenix-client/bin/./psql.py us_population.sql us_population.csv us_population_queries.sql
+
+/usr/hdp/current/phoenix-client/bin/./psql.py us_population_queries.sql
+
+
+cd /usr/hdp/3.0.0.0-1634/phoenix/
+
+bin/sqlline.py namenode.ambari.hadoop:2181:/hbase-unsecure
+/usr/hdp/3.0.0.0-1634/phoenix/bin/sqlline.py hbase@datanode2.ambari.hadoop:2181:/hbase-unsecure
