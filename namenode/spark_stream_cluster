@@ -2,10 +2,17 @@ sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
 --class "integra.cl_stream_traffic" \
 --master yarn \
 --deploy-mode cluster \
---jars spark-streaming-kafka-0-10_2.11-2.3.1.jar,kafka-clients-0.10.0.1.jar,hbase-client-2.0.0.jar,hbase-common-2.0.0.jar,hbase-shaded-miscellaneous-2.0.0.jar,hbase-protocol-shaded-2.0.0.jar,hbase-shaded-protobuf-2.0.0.jar,hbase-shaded-netty-2.0.0.jar,hbase-protocol-2.0.0.jar \
+--jars spark-streaming-kafka-0-10_2.11-2.3.1.jar,kafka-clients-0.10.0.1.jar \
 stream_cluster.jar
 
 --driver-memory 1000M \
 --executor-memory 1500M \
 
 --jars spark-streaming-kafka-0-10_2.11-2.3.1.jar,kafka-clients-0.10.0.1.jar,hbase-client-2.0.0.jar,hbase-common-2.0.0.jar,hbase-shaded-miscellaneous-2.0.0.jar,hbase-protocol-shaded-2.0.0.jar,hbase-shaded-protobuf-2.0.0.jar,hbase-shaded-netty-2.0.0.jar,hbase-protocol-2.0.0.jar \
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "integra.cl_stream_traffic" \
+--master yarn \
+--deploy-mode client \
+--jars spark-streaming-kafka-0-10_2.11-2.3.1.jar,kafka-clients-0.10.0.1.jar,hbase-client-2.0.0.jar,hbase-common-2.0.0.jar,hbase-shaded-miscellaneous-2.0.0.jar,hbase-protocol-shaded-2.0.0.jar,hbase-shaded-protobuf-2.0.0.jar,hbase-shaded-netty-2.0.0.jar,hbase-protocol-2.0.0.jar \
+stream_cluster.jar

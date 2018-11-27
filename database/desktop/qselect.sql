@@ -10,8 +10,7 @@ id_orig_h,
 id_resp_h, 
 --id_resp_p, 
 proto,     
-query,
-
+query
 FROM JSON9
 --WHERE tipo = 'DNS';
 --WHERE tipo = 'DNS'
