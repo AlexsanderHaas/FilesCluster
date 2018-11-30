@@ -1,0 +1,26 @@
+---client 
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--class "main.cl_process" \
+--master yarn \
+--deploy-mode client \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar \
+batch_cluster.jar
+
+---cluster
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "PROCESSA LOGS do BRO" \
+--class "main.cl_process" \
+--master yarn \
+--deploy-mode cluster \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar \
+batch_cluster.jar
+
+
+ID_ORIG_H   VARCHAR,    
+  PROTO 	  VARCHAR,
+  SERVICE     VARCHAR,
+  DURATION    UNSIGNED_LONG,
+  ORIG_BYTES  UNSIGNED_LONG,
+  RESP_BYTES
