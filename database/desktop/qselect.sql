@@ -21,6 +21,6 @@ WHERE tipo = 'DNS'
 --AND TS_CODE >= TO_TIMESTAMP ('2018-11-25 15:09:00.000')
 --AND query LIKE 'www%'
 --AND proto = 'tcp'
-ORDER BY ts_code
+--ORDER BY ts_code ASC
 LIMIT 100;
 --WHERE TS_CODE >= TO_TIMESTAMP ('1542571843'); --https://phoenix.apache.org/language/functions.html#to_timestamp

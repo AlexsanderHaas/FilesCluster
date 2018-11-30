@@ -8,6 +8,6 @@ CREATE TABLE IF NOT EXISTS orig (
   RESP_BYTES  UNSIGNED_LONG,
 	  
   CONSTRAINT pk PRIMARY KEY( TS_CODE,
-							 ID_ORIG_H
+							 ID_ORIG_H,
 							 PROTO  ,
 							 SERVICE ));
