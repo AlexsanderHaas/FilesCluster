@@ -17,10 +17,93 @@ sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
 --jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar \
 batch_cluster.jar
 
+---cluster new Setar memoria
 
-ID_ORIG_H   VARCHAR,    
-  PROTO 	  VARCHAR,
-  SERVICE     VARCHAR,
-  DURATION    UNSIGNED_LONG,
-  ORIG_BYTES  UNSIGNED_LONG,
-  RESP_BYTES
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Analisa LOGS e salva Totais" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar \
+batch_log.jar
+
+###Processa dados de testes da UNB - 30/12/18
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa Totais UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars spark-sql_2.11-2.2.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_totais_process_18_12_30.jar
+
+###Processa dados DDoS da UNB - 31/12/18
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means DDoS UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars spark-sql_2.11-2.2.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_ddos_process_18_12_31.jar
+
+###Processa dados SCANPORT da UNB - 31/12/18
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa Scan Port DDoS UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars spark-sql_2.11-2.2.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_scanport_process_18_12_31.jar
+
+###Export Results da UNB - 31/12/18
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta All UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars spark-sql_2.11-2.2.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_export_all_18_12_31.jar
+
+############EXPORTA RESULTADOS
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta Totais UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_totais_export_18_12_30.jar
+
+#LOCAL#####################
+
+,okio-1.13.0.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,spark-mllib_2.11-2.3.1.jar,
+
+/usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta Totais UNB" \
+--class "main.cl_main" \
+--master local[4] \
+--jars spark-sql_2.11-2.2.1.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okhttp-3.9.0.jar,okio-1.13.0.jar \
+batch_totais_export_18_12_30.jar

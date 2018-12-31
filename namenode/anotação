@@ -1,0 +1,4 @@
+/usr/hdp/current/phoenix-client/bin/./psql.py
+
+final static String gc_zkurl = "namenode.ambari.hadoop:2181:/hbase-unsecure";
+final static String gc_boots = "namenode.ambari.hadoop:6667";
