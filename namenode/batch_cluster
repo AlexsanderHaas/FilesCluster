@@ -71,6 +71,7 @@ batch_scanport_process_18_12_31.jar
 
 ###Export Results da UNB - 31/12/18
 
+
 sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
 --name "Exporta All UNB" \
 --class "main.cl_main" \

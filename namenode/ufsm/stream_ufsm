@@ -1,0 +1,14 @@
+
+###Salva dados da UFSM - Executado em 01-01-19
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Logs da UFSM" \
+--class "integra.cl_stream_traffic" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars kafka_2.11-0.10.0.1.jar,kafka-clients-0.10.0.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,spark-streaming-kafka-0-10_2.11-2.3.1.jar \
+stream_19_01_01.jar
