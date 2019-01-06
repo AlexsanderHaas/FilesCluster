@@ -1,0 +1,286 @@
+########################################
+###Processa dados UFSM - 03/01/19 - Processa os dados menor que 09-12-18 = 5 dias
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa Totais UFSM: LT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_totais_lt_09_12_18.jar
+
+########################################
+###Processa dados UFSM - 03/01/19 - Processa os dados MAIOR que 09-12-18
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa Totais UFSM: GT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_totais_gt_09_12_18.jar
+
+########################################
+###Processa dados DDoS da UFSM - 05/01/19 - Processa os dados menor que 09-12-18 = 5 dias
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means DDoS: LT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_kmeans_lt_09_12_18.jar
+
+########################################
+###Processa dados DDoS da UFSM - 05/01/19 - Processa os dados MAIOR que 09-12-18
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means DDoS: GT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_kmeans_gt_09_12_18.jar
+
+
+########################################
+###Processa dados SCAN da UFSM - 05/01/19 - Processa os dados menor que 09-12-18 = 5 dias
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means Scan Port UFSM: LT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_scanport_lt_09_12_18.jar
+
+########################################
+###Processa dados SCAN da UFSM - 05/01/19 - Processa os dados MAIOR que 09-12-18
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means Scan Port UFSM: GT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_scanport_gt_09_12_18.jar
+
+
+########################################
+###Exporta resultados da UFSM - 05/01/19
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta resultados PROTO_SERVICE_RESP_H e DDOS" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+export_ipinfo_ddos.jar
+
+
+########################################
+###Exporta resultados da UFSM - 05/01/19
+######################################## DOING
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta resultados TOTAIS e SCAN PORT" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+export_totais_scan.jar
+
+########################################
+###MODEL DDOS all data MODEL 05/01/19 - Processa o KMEANS com todos dados para gerar o modelo
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "ALL DATA MODEL DDOS" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+ddos_all_model.jar
+
+
+########################################
+###Processas DDOS all data MODEL 06/01/19 - Utiliza o mesmo MODEL em todos dados DDOS
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means DDoS Load Model: LT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_ddos_model_lt_09_12.jar
+
+########################################
+###Processas DDOS all data MODEL 06/01/19 - Utiliza o mesmo MODEL em todos dados DDOS
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means DDoS Load Model: GT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_ddos_model_gt_09_12.jar
+
+
+########################################
+###MODEL Scan Port all data MODEL 06/01/19 - Processa o KMEANS com todos dados para gerar o modelo
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "ALL DATA MODEL SCAN PORT" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+scanport_all_model.jar
+
+
+########################################
+###MODEL Scan Port MODEL 06/01/19 - Processa o KMEANS utilizando model pronto
+######################################## REAd
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means Scan Port Load Model: LT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_scanport_model_lt_09_12.jar
+
+########################################
+###MODEL Scan Port MODEL 06/01/19 - Processa o KMEANS utilizando model pronto
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Processa K-Means Scan Port Load Model: GT 09-12-18" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+process_scanport_model_gt_09_12.jar
+
+########################################
+###Exporta Resultados 06/01/19 - Exporta para o HDFS
+######################################## READ
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta resultados to HDFS" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.3.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+export_all_results.jar
+
+
+
+###Export Results da UNB - 31/12/18
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta All UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 2G \
+--executor-memory 5000M \
+--num-executors 5 \
+--executor-cores 9 \
+--jars spark-sql_2.11-2.2.1.jar,spark-mllib_2.11-2.3.1.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_export_all_18_12_31.jar
+
+############EXPORTA RESULTADOS
+
+sudo -u hdfs /usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta Totais UNB" \
+--class "main.cl_main" \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 5G \
+--executor-memory 2500M \
+--num-executors 5 \
+--executor-cores 2 \
+--jars phoenix-5.0.0.3.0.0.0-1634-client.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okio-1.13.0.jar,okhttp-3.9.0.jar \
+batch_totais_export_18_12_30.jar
+
+#LOCAL#####################
+
+,okio-1.13.0.jar,phoenix-5.0.0.3.0.0.0-1634-client.jar,spark-mllib_2.11-2.3.1.jar,
+
+/usr/hdp/3.0.0.0-1634/spark2/bin/spark-submit \
+--name "Exporta Totais UNB" \
+--class "main.cl_main" \
+--master local[4] \
+--jars spark-sql_2.11-2.2.1.jar,phoenix-5.0.0-HBase-2.0-client.jar,phoenix-spark-5.0.0-HBase-2.0.jar,ipinfo-api-1.0.jar,okhttp-3.9.0.jar,okio-1.13.0.jar \
+batch_totais_export_18_12_30.jar
