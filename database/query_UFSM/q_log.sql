@@ -1,0 +1,27 @@
+SELECT  
+COUNT(PROTO)
+-- TIPO,		
+--TS      ,
+--ID_ORIG_H ,
+--ID_RESP_H,
+--ORIG_L2_ADDR,
+--RESP_L2_ADDR,
+-- ID_ORIG_P ,
+-- ID_RESP_H ,
+-- ID_RESP_P ,
+-- PROTO     ,
+-- UID       ,
+-- ROW_ID   	,
+ --"SSH".*
+ --"CONN".*
+--PROTO
+FROM LOG_UFSM
+WHERE 
+--ID_ORIG_H = '10.1.2.71'
+--AND
+TIPO = 'CONN'
+GROUP BY PROTO;
+--AND 
+--ID_ORIG_H = '10.1.2.71' LIMIT 1000;
+--GROUP BY PROTO;
+--AND PROTO = NULL;
